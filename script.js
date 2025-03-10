@@ -35,235 +35,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Cart Functionality
-  let cart = [];
-  const cartIcon = document.querySelector('.cart-icon');
-  const cartModal = document.getElementById('cart-modal');
-  const modalClose = document.querySelector('.modal-close');
-  const cartCount = document.querySelector('.cart-count');
-  const cartItems = document.getElementById('cart-items');
-  const modalCartItems = document.getElementById('modal-cart-items');
-  const modalCartTotal = document.getElementById('modal-cart-total');
-  const modalCheckout = document.getElementById('modal-checkout');
-  const modalClear = document.getElementById('modal-clear');
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  const cartEmptyMessage = document.getElementById('cart-empty-message');
-  const cartSummary = document.getElementById('cart-summary');
-  const cartTotalAmount = document.getElementById('cart-total-amount');
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const clearCartBtn = document.getElementById('clear-cart-btn');
-
-  // Open cart modal
-  cartIcon.addEventListener('click', function() {
-    updateCartModal();
-    cartModal.style.display = 'block';
-  });
-
-  // Close cart modal
-  modalClose.addEventListener('click', function() {
-    cartModal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside
-  window.addEventListener('click', function(event) {
-    if (event.target === cartModal) {
-      cartModal.style.display = 'none';
-    }
-  });
-
-  // Add items to cart
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const id = this.getAttribute('data-id');
-      const name = this.getAttribute('data-name');
-      const price = parseFloat(this.getAttribute('data-price'));
-      
-      // Check if item already in cart
-      const existingItem = cart.find(item => item.id === id);
-      
-      if (existingItem) {
-        existingItem.quantity++;
-      } else {
-        cart.push({
-          id,
-          name,
-          price,
-          quantity: 1
-        });
+  // Smooth scrolling for navigation links
+  const navLinks = document.querySelectorAll('.nav-links a, .footer-links a, .btn-primary');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (this.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+          // Close mobile menu if open
+          document.querySelector('.nav-links').classList.remove('active');
+        }
       }
-      
-      updateCart();
-      showNotification(`${name} added to cart!`);
     });
   });
-
-  // Clear cart
-  modalClear.addEventListener('click', function() {
-    cart = [];
-    updateCart();
-  });
-
-  clearCartBtn.addEventListener('click', function() {
-    cart = [];
-    updateCart();
-  });
-
-  // Checkout
-  modalCheckout.addEventListener('click', function() {
-    if (cart.length > 0) {
-      alert('Thank you for your order! This would normally proceed to payment processing.');
-      cart = [];
-      updateCart();
-      cartModal.style.display = 'none';
-    }
-  });
-
-  checkoutBtn.addEventListener('click', function() {
-    if (cart.length > 0) {
-      alert('Thank you for your order! This would normally proceed to payment processing.');
-      cart = [];
-      updateCart();
-    }
-  });
-
-  // Update cart display
-  function updateCart() {
-    // Update cart count
-    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
-    
-    // Update cart items display
-    if (cart.length === 0) {
-      cartEmptyMessage.style.display = 'block';
-      cartSummary.style.display = 'none';
-      cartItems.innerHTML = '';
-    } else {
-      cartEmptyMessage.style.display = 'none';
-      cartSummary.style.display = 'block';
-      
-      let cartHTML = '';
-      let total = 0;
-      
-      cart.forEach(item => {
-        total += item.price * item.quantity;
-        cartHTML += `
-          <div class="cart-item">
-            <div class="cart-item-info">
-              <div class="cart-item-name">${item.name}</div>
-              <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-              <div class="cart-item-quantity">
-                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
-                <span>${item.quantity}</span>
-                <button class="quantity-btn increase" data-id="${item.id}">+</button>
-              </div>
-            </div>
-            <button class="remove-item" data-id="${item.id}">Remove</button>
-          </div>
-        `;
-      });
-      
-      cartItems.innerHTML = cartHTML;
-      cartTotalAmount.textContent = `$${total.toFixed(2)}`;
-      
-      // Add event listeners to quantity buttons
-      const decreaseButtons = document.querySelectorAll('.decrease');
-      const increaseButtons = document.querySelectorAll('.increase');
-      const removeButtons = document.querySelectorAll('.remove-item');
-      
-      decreaseButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const id = this.getAttribute('data-id');
-          const item = cart.find(item => item.id === id);
-          
-          if (item.quantity > 1) {
-            item.quantity--;
-          } else {
-            cart = cart.filter(item => item.id !== id);
-          }
-          
-          updateCart();
-        });
-      });
-      
-      increaseButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const id = this.getAttribute('data-id');
-          const item = cart.find(item => item.id === id);
-          item.quantity++;
-          updateCart();
-        });
-      });
-      
-      removeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const id = this.getAttribute('data-id');
-          cart = cart.filter(item => item.id !== id);
-          updateCart();
-        });
-      });
-    }
-    
-    updateCartModal();
-  }
-
-  // Update cart modal
-  function updateCartModal() {
-    if (cart.length === 0) {
-      modalCartItems.innerHTML = '<p>Your cart is empty</p>';
-      modalCartTotal.textContent = 'Total: $0.00';
-    } else {
-      let modalHTML = '';
-      let total = 0;
-      
-      cart.forEach(item => {
-        total += item.price * item.quantity;
-        modalHTML += `
-          <div class="modal-cart-item">
-            <span>${item.name} x ${item.quantity}</span>
-            <span>$${(item.price * item.quantity).toFixed(2)}</span>
-          </div>
-        `;
-      });
-      
-      modalCartItems.innerHTML = modalHTML;
-      modalCartTotal.textContent = `Total: $${total.toFixed(2)}`;
-    }
-  }
-
-  // Notification function
-  function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    
-    // Add styles for notification
-    notification.style.position = 'fixed';
-    notification.style.bottom = '20px';
-    notification.style.right = '20px';
-    notification.style.backgroundColor = 'var(--primary-color)';
-    notification.style.color = 'white';
-    notification.style.padding = '10px 20px';
-    notification.style.borderRadius = '4px';
-    notification.style.opacity = '0';
-    notification.style.transform = 'translateY(20px)';
-    notification.style.transition = 'opacity 0.3s, transform 0.3s';
-    notification.style.zIndex = '1000';
-    
-    // Show notification
-    setTimeout(() => {
-      notification.style.opacity = '1';
-      notification.style.transform = 'translateY(0)';
-    }, 10);
-    
-    // Hide and remove notification
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      notification.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 300);
-    }, 3000);
-  }
 
   // Eco Calculator
   const calculateBtn = document.getElementById('calculate-impact');

@@ -23,14 +23,13 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#shop">Shop</a></li>
+          <li><a href="#wood-types">Wood Materials</a></li>
           <li><a href="#eco-calculator">Eco Calculator</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count">0</span>
+      <div class="contact-icon">
+        <a href="#contact"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </header>
@@ -49,7 +48,7 @@
     <div class="container">
       <h2 class="section-title">About Us</h2>
       <div class="about-content">
-        <div class="about-image"></div>
+        <div class="about-image" style="background-image: url('attached_assets/woods.jpg');"></div>
         <div class="about-text">
           <h3>Our Story</h3>
           <p>Woodcon Limited is a Zambian timber company founded in 2010 by Mr. Luke Selesitino. The company specializes
@@ -79,9 +78,7 @@
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-tree"></i></div>
           <h3>Timber Processing</h3>
-          <p>We process diverse timber species such as mukwa, teak, mahogany, mopane, and rosewood from Bovu Local
-            Forest in Kazungula and Malanda Forest to make finished products such as desks, doors and a variety of other
-            forms of timber products. Softwoods like pine are available upon special order.</p>
+          <p>We transform premium hardwoods from sustainable forests into high-quality finished products. Our specialty includes mukwa, teak, mahogany, and other fine woods crafted into custom furniture, doors, and architectural elements.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-hammer"></i></div>
@@ -183,156 +180,37 @@
     </div>
   </section>
 
-  <section id="shop" class="shop">
+  <section id="wood-types" class="wood-types">
     <div class="container">
-      <h2 class="section-title">Shop Our Wood</h2>
-      <div class="category-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="zambian">Hardwoods</button>
-        <button class="filter-btn" data-filter="eastern">Premium Woods</button>
-        <button class="filter-btn" data-filter="western">Specialty Woods</button>
-        <button class="filter-btn" data-filter="southern">Custom Packages</button>
-      </div>
-      <div class="shop-grid">
-        <!-- Premium Hardwoods -->
-        <div class="product-card" data-category="zambian">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1533822262776-98f9a5b29efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+      <h2 class="section-title">Our Wood Materials</h2>
+      <div class="wood-types-info">
+        <p>At WOODCON, we work with a variety of sustainably sourced timber species, each with unique properties and applications:</p>
+        
+        <div class="wood-info-grid">
+          <div class="wood-info-card">
+            <h3>Mukwa</h3>
+            <p>Premium hardwood from Bovu Local Forest, known for its durability, rich color, and resistance to termites. Ideal for high-end furniture and structural elements.</p>
           </div>
-          <h3>Mukwa Wood</h3>
-          <p>Premium hardwood from Bovu Local Forest, known for its durability and rich color.</p>
-          <div class="product-price">$45.99 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          
+          <div class="wood-info-card">
+            <h3>Teak</h3>
+            <p>Durable and naturally termite-resistant wood from Malanda Forest. Teak's natural oils make it excellent for outdoor furniture, decking, and moisture-prone areas.</p>
           </div>
-          <button class="add-to-cart" data-id="1" data-name="Mukwa Wood" data-price="45.99">Add to Cart</button>
+          
+          <div class="wood-info-card">
+            <h3>Mahogany</h3>
+            <p>Rich reddish-brown wood perfect for fine furniture, carvings, and architectural details. Valued for its beautiful grain patterns and workability.</p>
+          </div>
+          
+          <div class="wood-info-card">
+            <h3>Additional Woods</h3>
+            <p>We also work with mopane, rosewood, and pine (available on special order). Each wood type is carefully selected for specific project requirements and environmental considerations.</p>
+          </div>
         </div>
-
-        <div class="product-card" data-category="zambian">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1579463148228-138296ac3b98?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Teak</h3>
-          <p>Durable and termite-resistant wood from Malanda Forest, ideal for furniture and flooring.</p>
-          <div class="product-price">$52.99 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="2" data-name="Teak" data-price="52.99">Add to Cart</button>
-        </div>
-
-        <!-- Premium Hardwoods -->
-        <div class="product-card" data-category="eastern">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1604846887565-640d2f52d564?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Mopane</h3>
-          <p>Durable hardwood with excellent resistance to weather and insects, sourced from sustainable forests.</p>
-          <div class="product-price">$48.50 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="3" data-name="Mopane" data-price="48.50">Add to Cart</button>
-        </div>
-
-        <div class="product-card" data-category="eastern">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1588421357574-87938a86fa28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Mahogany</h3>
-          <p>Rich reddish-brown wood perfect for fine furniture and carvings, harvested from Malanda Forest.</p>
-          <div class="product-price">$65.99 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="4" data-name="Mahogany" data-price="65.99">Add to Cart</button>
-        </div>
-
-        <!-- Premium Hardwoods Continued -->
-        <div class="product-card" data-category="western">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1565298931044-63c9b2405b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Rosewood</h3>
-          <p>Beautiful and aromatic timber known for its rich, deep colors and distinctive grain patterns.</p>
-          <div class="product-price">$59.75 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="5" data-name="Rosewood" data-price="59.75">Add to Cart</button>
-        </div>
-
-        <div class="product-card" data-category="western">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1541823709867-1b206113eafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Pine (Softwood)</h3>
-          <p>Versatile softwood for a wide range of applications. Available on special order only.</p>
-          <div class="product-price">$42.25 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="6" data-name="Pine (Softwood)" data-price="42.25">Add to Cart</button>
-        </div>
-
-        <!-- Custom Orders -->
-        <div class="product-card" data-category="southern">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Premium Teak</h3>
-          <p>The finest teak selection from Bovu Local Forest, ideal for luxury furniture and decking.</p>
-          <div class="product-price">$89.99 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="7" data-name="Premium Teak" data-price="89.99">Add to Cart</button>
-        </div>
-
-        <div class="product-card" data-category="southern">
-          <div class="product-image"
-            style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          </div>
-          <h3>Mixed Hardwood Package</h3>
-          <p>A curated selection of our finest hardwoods including Mukwa, Teak, and Rosewood.</p>
-          <div class="product-price">$55.50 per sq ft</div>
-          <div class="eco-rating">
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
-            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
-          </div>
-          <button class="add-to-cart" data-id="8" data-name="Mixed Hardwood Package" data-price="55.50">Add to
-            Cart</button>
+        
+        <div class="sustainability-note">
+          <div class="note-icon"><i class="fas fa-leaf"></i></div>
+          <p>All our wood materials are sourced from responsibly managed forests. We maintain strict sustainability practices to ensure minimal environmental impact while delivering exceptional quality.</p>
         </div>
       </div>
     </div>
@@ -415,20 +293,12 @@
     </div>
   </section>
 
-  <section id="cart" class="cart-section">
+  <section id="cta" class="cta-section">
     <div class="container">
-      <h2 class="section-title">Your Cart</h2>
-      <div id="cart-content">
-        <div id="cart-empty-message">Your cart is empty</div>
-        <div id="cart-items"></div>
-        <div id="cart-summary" style="display: none;">
-          <div class="cart-total">
-            <span>Total:</span>
-            <span id="cart-total-amount">$0.00</span>
-          </div>
-          <button id="checkout-btn" class="btn-primary">Proceed to Checkout</button>
-          <button id="clear-cart-btn" class="btn-secondary">Clear Cart</button>
-        </div>
+      <h2 class="section-title">Ready to Work with Us?</h2>
+      <div class="cta-content">
+        <p>Discover how WOODCON's sustainable timber solutions can transform your next project with quality craftsmanship and eco-friendly practices.</p>
+        <a href="#contact" class="btn-primary">Contact Us Today</a>
       </div>
     </div>
   </section>
@@ -511,7 +381,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#shop">Shop</a></li>
+            <li><a href="#wood-types">Wood Materials</a></li>
             <li><a href="#eco-calculator">Eco Calculator</a></li>
           </ul>
         </div>
@@ -529,18 +399,7 @@
     </div>
   </footer>
 
-  <div id="cart-modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2>Your Cart</h2>
-      <div id="modal-cart-items"></div>
-      <div id="modal-cart-total">Total: $0.00</div>
-      <div class="modal-actions">
-        <button id="modal-checkout" class="btn-primary">Checkout</button>
-        <button id="modal-clear" class="btn-secondary">Clear Cart</button>
-      </div>
-    </div>
-  </div>
+  <!-- End of page content -->
 
   <script src="script.js"></script>
 </body>
