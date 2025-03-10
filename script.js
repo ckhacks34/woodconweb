@@ -302,56 +302,42 @@ document.addEventListener('DOMContentLoaded', function() {
         carbon = 2.4 * sqFt;
         water = 68 * sqFt;
         sustainRating = 'Medium';
-        alt = 'Zambezi Teak, Kiaat';
+        alt = 'Teak, Mopane';
         break;
-      case 'zambezi-teak':
+      case 'teak':
         impact = 50;
         carbon = 2.1 * sqFt;
         water = 55 * sqFt;
         sustainRating = 'Medium-High';
-        alt = 'Obeche, Mvule';
+        alt = 'Pine, Mopane';
         break;
-      case 'mvule':
-        impact = 45;
-        carbon = 1.9 * sqFt;
-        water = 50 * sqFt;
-        sustainRating = 'High';
-        alt = 'Obeche, Zambezi Teak';
+      case 'rosewood':
+        impact = 85;
+        carbon = 3.8 * sqFt;
+        water = 90 * sqFt;
+        sustainRating = 'Low';
+        alt = 'Mahogany, Teak';
         break;
-      case 'african-mahogany':
+      case 'mahogany':
         impact = 75;
         carbon = 3.5 * sqFt;
         water = 85 * sqFt;
         sustainRating = 'Low';
-        alt = 'Obeche, Kiaat';
+        alt = 'Teak, Pine';
         break;
-      case 'iroko':
+      case 'mopane':
         impact = 55;
         carbon = 2.3 * sqFt;
         water = 60 * sqFt;
         sustainRating = 'Medium';
-        alt = 'Mvule, Kiaat';
+        alt = 'Mukwa, Teak';
         break;
-      case 'obeche':
+      case 'pine':
         impact = 30;
         carbon = 1.2 * sqFt;
         water = 40 * sqFt;
         sustainRating = 'Very High';
-        alt = 'Any other wood type';
-        break;
-      case 'african-blackwood':
-        impact = 90;
-        carbon = 4.2 * sqFt;
-        water = 95 * sqFt;
-        sustainRating = 'Very Low';
-        alt = 'Consider alternatives if possible';
-        break;
-      case 'kiaat':
-        impact = 40;
-        carbon = 1.8 * sqFt;
-        water = 48 * sqFt;
-        sustainRating = 'High';
-        alt = 'Obeche, Zambezi Teak';
+        alt = 'Most eco-friendly option';
         break;
     }
     
