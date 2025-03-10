@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   menuIcon.addEventListener('click', function() {
     navLinks.classList.toggle('active');
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function closeMenu(e) {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.nav-links')) {
+        navLinks.classList.remove('active');
+        document.removeEventListener('click', closeMenu);
+      }
+    });
   });
 
   // Shop Category Filtering
@@ -36,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Smooth scrolling for navigation links
-  const navLinks = document.querySelectorAll('.nav-links a, .footer-links a, .btn-primary');
-  navLinks.forEach(link => {
+  const navLinkElements = document.querySelectorAll('.nav-links a, .footer-links a, .btn-primary');
+  navLinkElements.forEach(link => {
     link.addEventListener('click', function(e) {
       if (this.getAttribute('href').startsWith('#')) {
         e.preventDefault();
@@ -174,7 +182,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thank you for your message! We will get back to you soon.');
+      const email = 'info@woodcon.com';
+      const subject = document.getElementById('subject').value;
+      const body = document.getElementById('message').value;
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      alert('Thank you for your message! Opening your email client...');
       contactForm.reset();
     });
   }

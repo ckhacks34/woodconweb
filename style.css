@@ -198,6 +198,14 @@ header .container {
 .menu-icon {
   display: none;
   cursor: pointer;
+  font-size: 1.5rem;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon:hover {
+  background-color: var(--light-gray);
 }
 
 /* Hero Section */
