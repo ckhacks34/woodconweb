@@ -10,11 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   menuIcon.addEventListener('click', function() {
     navLinks.classList.toggle('active');
+    // Toggle icon between bars and times (X)
+    const icon = this.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
     
     // Close menu when clicking outside
     document.addEventListener('click', function closeMenu(e) {
       if (!e.target.closest('.menu-icon') && !e.target.closest('.nav-links')) {
         navLinks.classList.remove('active');
+        const menuIcon = document.querySelector('.menu-icon i');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
         document.removeEventListener('click', closeMenu);
       }
     });
@@ -191,7 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Newsletter form removed
+  // Remove references to updateCart function that doesn't exist
+  // This fixes the console errors
 
   // Initialize complete
 });
