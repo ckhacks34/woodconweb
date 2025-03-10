@@ -200,5 +200,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize cart (removing updateCart function call since it's not defined)
+  // Initialize complete
 });
