@@ -1,16 +1,426 @@
-<!DOCTYPE html>
-<html>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOODCON - African Wood Solutions</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-  Hello world
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>WOODCON</h1>
+      </div>
+      <nav>
+        <div class="menu-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#eco-calculator">Eco Calculator</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>African Wood Excellence</h1>
+        <p>Sustainable, beautiful and eco-friendly wood solutions from the heart of Africa.</p>
+        <a href="#shop" class="btn-primary">Explore Our Wood</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div class="about-image"></div>
+        <div class="about-text">
+          <h3>Our Story</h3>
+          <p>WOODCON is a premier supplier of African wood products, dedicated to sustainable forestry practices and ecological responsibility. Founded with a vision to showcase the beauty and durability of African woods while promoting environmental conservation.</p>
+          <p>We work directly with local communities across Zambia and other African countries to ensure fair trade practices and economic empowerment while preserving natural resources for future generations.</p>
+          <h3>Our Mission</h3>
+          <p>To provide high-quality, sustainable wood products that celebrate African craftsmanship while protecting our forests and supporting local communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tree"></i></div>
+          <h3>Sustainable Sourcing</h3>
+          <p>We responsibly source woods from managed forests across Africa.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-hammer"></i></div>
+          <h3>Custom Woodworking</h3>
+          <p>Bespoke wood solutions designed to your specifications.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck"></i></div>
+          <h3>Worldwide Shipping</h3>
+          <p>Reliable delivery of our products to customers globally.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Eco Consulting</h3>
+          <p>Expert advice on sustainable wood choices for your projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="shop">
+    <div class="container">
+      <h2 class="section-title">Shop Our Wood</h2>
+      <div class="category-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="zambian">Zambian</button>
+        <button class="filter-btn" data-filter="eastern">Eastern Africa</button>
+        <button class="filter-btn" data-filter="western">Western Africa</button>
+        <button class="filter-btn" data-filter="southern">Southern Africa</button>
+      </div>
+      <div class="shop-grid">
+        <!-- Zambian Woods -->
+        <div class="product-card" data-category="zambian">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1533822262776-98f9a5b29efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Mukwa Wood</h3>
+          <p>Premium Zambian hardwood, known for its durability and rich color.</p>
+          <div class="product-price">$45.99 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="1" data-name="Mukwa Wood" data-price="45.99">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="zambian">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1579463148228-138296ac3b98?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Zambezi Teak</h3>
+          <p>Durable and termite-resistant wood ideal for furniture and flooring.</p>
+          <div class="product-price">$52.99 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="2" data-name="Zambezi Teak" data-price="52.99">Add to Cart</button>
+        </div>
+
+        <!-- Eastern African Woods -->
+        <div class="product-card" data-category="eastern">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1604846887565-640d2f52d564?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Mvule</h3>
+          <p>East African hardwood with excellent resistance to weather and insects.</p>
+          <div class="product-price">$48.50 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="3" data-name="Mvule" data-price="48.50">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="eastern">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1588421357574-87938a86fa28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>African Mahogany</h3>
+          <p>Rich reddish-brown wood perfect for fine furniture and carvings.</p>
+          <div class="product-price">$65.99 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="4" data-name="African Mahogany" data-price="65.99">Add to Cart</button>
+        </div>
+
+        <!-- Western African Woods -->
+        <div class="product-card" data-category="western">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1565298931044-63c9b2405b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Iroko</h3>
+          <p>West African wood similar to teak, used for both interior and exterior applications.</p>
+          <div class="product-price">$59.75 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="5" data-name="Iroko" data-price="59.75">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="western">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541823709867-1b206113eafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Obeche</h3>
+          <p>Lightweight wood ideal for carvings, interior millwork, and furniture.</p>
+          <div class="product-price">$42.25 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="6" data-name="Obeche" data-price="42.25">Add to Cart</button>
+        </div>
+
+        <!-- Southern African Woods -->
+        <div class="product-card" data-category="southern">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>African Blackwood</h3>
+          <p>One of the hardest and most valuable woods, used for fine instruments.</p>
+          <div class="product-price">$89.99 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="7" data-name="African Blackwood" data-price="89.99">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="southern">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')"></div>
+          <h3>Kiaat</h3>
+          <p>Beautiful South African hardwood with golden to reddish-brown tones.</p>
+          <div class="product-price">$55.50 per sq ft</div>
+          <div class="eco-rating">
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf eco-filled"><i class="fas fa-leaf"></i></span>
+            <span class="eco-leaf"><i class="fas fa-leaf"></i></span>
+          </div>
+          <button class="add-to-cart" data-id="8" data-name="Kiaat" data-price="55.50">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="eco-calculator" class="eco-calculator">
+    <div class="container">
+      <h2 class="section-title">Eco Impact Calculator</h2>
+      <p class="calculator-intro">Evaluate the environmental impact of different wood choices for your project.</p>
+      
+      <div class="calculator-grid">
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="wood-type">Wood Type:</label>
+            <select id="wood-type">
+              <option value="">Select a wood type</option>
+              <option value="mukwa">Mukwa</option>
+              <option value="zambezi-teak">Zambezi Teak</option>
+              <option value="mvule">Mvule</option>
+              <option value="african-mahogany">African Mahogany</option>
+              <option value="iroko">Iroko</option>
+              <option value="obeche">Obeche</option>
+              <option value="african-blackwood">African Blackwood</option>
+              <option value="kiaat">Kiaat</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="square-footage">Square Footage:</label>
+            <input type="number" id="square-footage" min="1" value="10">
+          </div>
+          
+          <div class="form-group">
+            <label for="project-type">Project Type:</label>
+            <select id="project-type">
+              <option value="flooring">Flooring</option>
+              <option value="furniture">Furniture</option>
+              <option value="cabinetry">Cabinetry</option>
+              <option value="decking">Decking</option>
+              <option value="structural">Structural</option>
+            </select>
+          </div>
+          
+          <button id="calculate-impact" class="btn-primary">Calculate Impact</button>
+        </div>
+        
+        <div class="calculator-results">
+          <div class="result-box">
+            <h3>Environmental Impact</h3>
+            <div id="impact-meter">
+              <div class="meter-bar">
+                <div class="meter-fill" style="width: 0%"></div>
+              </div>
+              <div class="meter-labels">
+                <span>Low Impact</span>
+                <span>High Impact</span>
+              </div>
+            </div>
+            <div id="impact-score">Impact Score: <span>--</span></div>
+          </div>
+          
+          <div class="result-details">
+            <div class="detail-item">
+              <strong>Carbon Footprint:</strong>
+              <span id="carbon-footprint">-- kg CO₂</span>
+            </div>
+            <div class="detail-item">
+              <strong>Water Usage:</strong>
+              <span id="water-usage">-- gallons</span>
+            </div>
+            <div class="detail-item">
+              <strong>Sustainability Rating:</strong>
+              <span id="sustainability-rating">--</span>
+            </div>
+            <div class="detail-item">
+              <strong>Recommended Alternatives:</strong>
+              <span id="alternatives">--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cart" class="cart-section">
+    <div class="container">
+      <h2 class="section-title">Your Cart</h2>
+      <div id="cart-content">
+        <div id="cart-empty-message">Your cart is empty</div>
+        <div id="cart-items"></div>
+        <div id="cart-summary" style="display: none;">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-amount">$0.00</span>
+          </div>
+          <button id="checkout-btn" class="btn-primary">Proceed to Checkout</button>
+          <button id="clear-cart-btn" class="btn-secondary">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>123 Wood Lane, Lusaka, Zambia</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <p>+260 123 456 789</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>info@woodcon.co.zm</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <p>Mon - Fri: 8:00 AM - 5:00 PM</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>WOODCON</h3>
+          <p>African Wood Excellence</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#eco-calculator">Eco Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <form id="newsletter-form">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> WOODCON. All Rights Reserved. Design by Ori-Studio.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="modal-cart-items"></div>
+      <div id="modal-cart-total">Total: $0.00</div>
+      <div class="modal-actions">
+        <button id="modal-checkout" class="btn-primary">Checkout</button>
+        <button id="modal-clear" class="btn-secondary">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
-
 </html>
