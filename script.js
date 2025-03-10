@@ -200,6 +200,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize cart
-  updateCart();
+  // Initialize cart (removing updateCart function call since it's not defined)
 });
