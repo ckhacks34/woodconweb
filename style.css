@@ -897,17 +897,26 @@ header .container {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--dark-color);
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .team-member {
@@ -917,6 +926,9 @@ header .container {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-member:hover {
@@ -925,21 +937,24 @@ header .container {
 }
 
 .member-image {
-  height: 280px;
+  height: 320px;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   border-radius: 8px 8px 0 0;
 }
 
 .team-member h3 {
   margin: 20px 0 10px;
   color: var(--dark-color);
+  font-size: 1.5rem;
 }
 
 .member-title {
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 20px;
+  font-size: 1.1rem;
+  padding: 0 15px;
 }
 
 /* Recent Projects section */
