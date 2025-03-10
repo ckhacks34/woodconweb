@@ -1,36 +1,24 @@
-
-// Mobile Navigation Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
   // Set current year in footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
   // Mobile menu toggle
-  const menuIcon = document.querySelector('.menu-icon');
+  const menuBtn = document.querySelector('.menu-btn');
   const navLinks = document.querySelector('.nav-links');
 
-  menuIcon.addEventListener('click', function() {
-    navLinks.classList.toggle('active');
-    // Toggle icon between bars and times (X)
-    const icon = this.querySelector('i');
-    if (icon.classList.contains('fa-bars')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    } else {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    }
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function closeMenu(e) {
-      if (!e.target.closest('.menu-icon') && !e.target.closest('.nav-links')) {
-        navLinks.classList.remove('active');
-        const menuIcon = document.querySelector('.menu-icon i');
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-        document.removeEventListener('click', closeMenu);
-      }
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function closeMenu(e) {
+        if (!e.target.closest('.menu-btn') && !e.target.closest('.nav-links')) {
+          navLinks.classList.remove('active');
+          document.removeEventListener('click', closeMenu);
+        }
+      });
     });
-  });
+  }
 
   // Shop Category Filtering
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -56,21 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Smooth scrolling for navigation links
-  const navLinkElements = document.querySelectorAll('.nav-links a, .footer-links a, .btn-primary');
-  navLinkElements.forEach(link => {
-    link.addEventListener('click', function(e) {
-      if (this.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: 'smooth'
-          });
-          // Close mobile menu if open
-          document.querySelector('.nav-links').classList.remove('active');
-        }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        navLinks.classList.remove('active');
       }
     });
   });
@@ -80,17 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = 'ngongochris415@gmail.com';
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
       const subject = document.getElementById('subject').value;
-      const body = document.getElementById('message').value;
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      alert('Thank you for your message! Opening your email client...');
+      const message = document.getElementById('message').value;
+
+      const mailtoLink = `mailto:ngongochris415@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = mailtoLink;
+
       contactForm.reset();
     });
   }
-
-  // Remove references to updateCart function that doesn't exist
-  // This fixes the console errors
-
-  // Initialize complete
 });
