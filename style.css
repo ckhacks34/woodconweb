@@ -438,25 +438,7 @@ header .container {
   background-color: var(--secondary-color);
 }
 
-/* Eco Calculator Section */
-.calculator-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-.calculator-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-}
-
-.calculator-form {
-  background-color: var(--light-color);
-  padding: 30px;
-  border-radius: 8px;
-}
-
+/* Form group styles for contact form */
 .form-group {
   margin-bottom: 20px;
 }
@@ -472,60 +454,6 @@ header .container {
   padding: 10px;
   border: 1px solid var(--gray);
   border-radius: 4px;
-}
-
-.calculator-results {
-  background-color: var(--white);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.result-box {
-  margin-bottom: 30px;
-}
-
-.result-box h3 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.meter-bar {
-  height: 20px;
-  background-color: var(--light-gray);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-.meter-fill {
-  height: 100%;
-  background: linear-gradient(to right, var(--success), var(--primary-color), var(--danger));
-  width: 0;
-  transition: width 0.5s ease-in-out;
-}
-
-.meter-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--gray);
-}
-
-#impact-score {
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-.result-details {
-  margin-top: 30px;
-}
-
-.detail-item {
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
 }
 
 /* Cart Section */
