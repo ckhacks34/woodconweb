@@ -752,6 +752,124 @@ header .container {
     font-size: 1.5rem;
   }
 
+
+/* Core Values Section */
+.core-values {
+  background-color: var(--light-color);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+/* Executive Team Section */
+.executive-team {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.member-image {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.team-member h3 {
+  margin: 20px 0 10px;
+  color: var(--dark-color);
+}
+
+.member-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Recent Projects section */
+.recent-projects {
+  margin-top: 50px;
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.sub-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+  text-align: center;
+}
+
+.project-list {
+  list-style: none;
+}
+
+.project-list li {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.project-list li i {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
   .nav-links {
     position: fixed;
     top: 70px;
