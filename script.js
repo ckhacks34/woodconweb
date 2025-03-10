@@ -191,14 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  const newsletterForm = document.getElementById('newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for subscribing to our newsletter!');
-      newsletterForm.reset();
-    });
-  }
+  // Newsletter form removed
 
   // Initialize complete
 });
