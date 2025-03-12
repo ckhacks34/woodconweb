@@ -406,7 +406,7 @@ header .container {
 .product-price {
   padding: 10px 20px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var (--primary-color);
 }
 
 .eco-rating {
@@ -774,7 +774,7 @@ header .container {
   transition: color 0.3s ease;
 }
 
-.contact-icon a:hover {
+contact-icon a:hover {
   color: var(--primary-color);
 }
 
@@ -873,6 +873,23 @@ header .container {
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Executive Team Responsive */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  /* Core Values Responsive */
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  /* Recent Projects Responsive */
+  .recent-projects {
+    margin: 3rem 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -948,143 +965,55 @@ header .container {
     margin: 0 0 10px 0;
   }
 
-
-/* Core Values Section */
-.core-values {
-  background-color: var(--light-color);
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.value-card {
-  background-color: var(--white);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.value-icon {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-}
-
-.value-card h3 {
-  color: var(--dark-color);
-  margin-bottom: 15px;
-}
-
-/* Executive Team Section */
-.executive-team {
-  background-color: var(--white);
-  padding: 80px 0;
-}
-
-.team-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--dark-color);
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 992px) {
+  /* Executive Team Responsive */
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
   }
-}
 
-.team-member {
-  background-color: var(--white);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  .team-member {
+    max-width: 350px;
+    margin: 0 auto;
+  }
 
-.team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
+  .member-image {
+    height: 300px;
+  }
 
-.member-image {
-  height: 320px;
-  background-size: cover;
-  background-position: center top;
-  border-radius: 8px 8px 0 0;
-}
+  .team-intro {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
 
-.team-member h3 {
-  margin: 20px 0 10px;
-  color: var(--dark-color);
-  font-size: 1.5rem;
-}
+  /* Core Values Responsive */
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
 
-.member-title {
-  color: var(--primary-color);
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  padding: 0 15px;
-}
+  .value-card {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
 
-/* Recent Projects section */
-.recent-projects {
-  margin-top: 50px;
-  background-color: var(--light-color);
-  padding: 30px;
-  border-radius: 8px;
-}
+  /* Recent Projects Responsive */
+  .recent-projects {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
 
-.sub-section-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: var(--dark-color);
-  text-align: center;
-}
+  .sub-section-title {
+    font-size: 1.5rem;
+  }
 
-.project-list {
-  list-style: none;
-}
-
-.project-list li {
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-}
-
-.project-list li i {
-  color: var(--primary-color);
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
+  .project-list li {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    line-height: 1.4;
+  }
 
   .nav-links {
     position: fixed;
@@ -1137,5 +1066,74 @@ header .container {
   .footer-newsletter form {
     max-width: 300px;
     margin: 0 auto;
+  }
+}
+
+/* Media Query for 1920x1080 screens */
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 800px;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+  }
+
+  /* Wood Types Section */
+  .wood-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+
+  /* Team Section */
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .member-image {
+    height: 400px;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  /* Text Sizing */
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 }
