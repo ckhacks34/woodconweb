@@ -1,33 +1,43 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    
-    require 'vender/autoload.php';
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
+    $message = $_POST['message'];  
 
     $mail = new PHPMailer(true);
 
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = "ngongochris415@gmail.com";
+        $mail->Password = "vbn.3.4.5";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+        $mail->setFrom($email, $name);
+        $mail->addAddress("ngongochris415@gmail.com", "Chris Ngongo");
 
-    $mail->Username = "you@example.com";
-    $mail->Password = "password";
+        $mail-> subject = "New Contact Form Submission";
+        $mail-> Body = "Name: $name\n". 
+                       "Email: $email\n".
+                       "Messege: $message\n";
+        if($mail-> send()){
+            echo "Messenge sent successfully";
+        }
+        else{
+            echo "Messenge could not be sent, Error: {$mail->ErrorInfo}";
+        }
+    } catch (Exception $e) {
+        echo "Messenge could not be sent, Error: {$mail->ErrorInfo}";
 
-    $mail->setFrom($email, $name);
-    $mail->addAddress("ngongochris415@gmail.com");
+    }
 
-    $mail->Subject = $subject;
-    $mail->Body = $message;
 
-    $mail->send();
-
-    echo "Mail sent!";
+}
+?>
