@@ -5,24 +5,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
     
-    $to = "ngongochris415@gmail.com";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    
-    $email_body = "You have received a new message from your website contact form.<br><br>" .
-                 "Name: $name<br>" .
-                 "Email: $email<br>" .
-                 "Subject: $subject<br>" .
-                 "Message:<br>$message";
-    
-    if(mail($to, $subject, $email_body, $headers)) {
-        header('Location: index.html?status=success#contact');
-    } else {
-        header('Location: index.html?status=error#contact');
-    }
-} else {
-    header('Location: index.html');
-}
-?>
+    require 'vender/autoload.php';
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->Username = "you@example.com";
+    $mail->Password = "password";
+
+    $mail->setFrom($email, $name);
+    $mail->addAddress("ngongochris415@gmail.com");
+
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    $mail->send();
+
+    echo "Mail sent!";
